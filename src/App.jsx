@@ -221,7 +221,8 @@ return (
 <div className="app-root" style={{ display: 'flex', flexDirection: 'column', background: '#f8fafc', fontFamily: 'sans-serif', maxWidth: '480px', margin: '0 auto' }}>
   <style>{`
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    .app-root { height: 100vh; height: 100dvh; }
+    html, body, #root { width: 100%; height: 100%; }
+    .app-root { height: 100vh; height: 100dvh; width: 100%; }
     .sl { width:100%; height:5px; border-radius:8px; background:#e2e8f0; outline:none; -webkit-appearance:none; cursor:pointer; display:block; touch-action: pan-x; }
     .sl::-webkit-slider-thumb { -webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:#2563eb; box-shadow:0 2px 6px rgba(37,99,235,.4); }
     .sl::-moz-range-thumb { width:28px; height:28px; border-radius:50%; background:#2563eb; border:none; }

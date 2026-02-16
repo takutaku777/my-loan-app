@@ -499,7 +499,7 @@ return (
           <div style={{ fontSize:'13px', fontWeight:700, color:'#0f172a', marginBottom:'10px' }}>月々のランニングコスト内訳</div>
           <div style={{ display:'grid', gap:'6px' }}>
             {[
-              { l: '固定資産税', v: runningDetail.tax, note: '物件価格の約1%÷12（概算）。新築3年・マンション5年は50%軽減。中古は納税通知書で確認を' },
+              { l: '固定資産税', v: runningDetail.tax, note: '物件価格の約1%÷12（概算）。新築は軽減措置あり' },
               ...(propertyType === 'mansion' ? [
                 { l: '管理費', v: runningDetail.mgmt, note: '設定値' },
                 { l: '修繕積立金', v: runningDetail.repair, note: '設定値（将来値上がりの可能性）' },
@@ -508,12 +508,12 @@ return (
               ]),
               { l: '火災保険', v: runningDetail.ins, note: '年2万円÷12' },
             ].map(({ l, v, note }) => (
-              <div key={l} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'8px 10px', background:'#f8fafc', borderRadius:'8px' }}>
-                <div>
+              <div key={l} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'8px 10px', background:'#f8fafc', borderRadius:'8px', gap:'8px' }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize:'13px', fontWeight:600, color:'#0f172a' }}>{l}</div>
                   <div style={{ fontSize:'13px', color:'#94a3b8' }}>{note}</div>
                 </div>
-                <span style={{ fontSize:'16px', fontWeight:700, color:'#475569' }}>{M(v)}</span>
+                <span style={{ fontSize:'16px', fontWeight:700, color:'#475569', flexShrink: 0 }}>{M(v)}</span>
               </div>
             ))}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'8px 10px', background:'#eff6ff', borderRadius:'8px', border:'1.5px solid #bfdbfe' }}>
